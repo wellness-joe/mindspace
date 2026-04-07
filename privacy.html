@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — MindSpace</title>
+    <meta name="description" content="MindSpace Privacy Policy. Your data stays on your device. We never collect, share, or sell your personal information.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #6C63FF;
+            --primary-light: #9D97FF;
+            --gradient-end: #A855F7;
+            --cyan: #5AC8FA;
+            --accent: #FF6B6B;
+            --success: #34C759;
+            --warning: #FF9F0A;
+            --info: #5AC8FA;
+            --error: #FF3B30;
+            --bg: #0A0F2C;
+            --bg-card: rgba(108, 99, 255, 0.06);
+            --text: #F1F1F6;
+            --text-secondary: #9B9BB4;
+            --text-muted: #5C5C7A;
+            --border: rgba(108, 99, 255, 0.1);
+            --glow: rgba(108, 99, 255, 0.25);
+            --radius: 16px;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .bg-glow {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse 500px 300px at 30% 10%, rgba(108,99,255,0.08), transparent),
+                radial-gradient(ellipse 400px 400px at 70% 50%, rgba(168,85,247,0.05), transparent);
+        }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,15,44,0.85); backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { max-width: 800px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+        .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-logo span { font-weight: 700; font-size: 16px; }
+        .nav-back { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        .nav-back:hover { color: var(--text); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+        .page-header { padding: 120px 0 40px; text-align: center; }
+        .page-header h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em; }
+        .page-header .gradient { background: linear-gradient(135deg, var(--primary), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 8px; }
+        .page-header .updated { font-size: 13px; color: var(--text-muted); }
+        .legal-content { padding: 40px 0 80px; }
+        .legal-section {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .legal-section:hover { border-color: rgba(108,99,255,0.2); }
+        .legal-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .legal-icon {
+            width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: 15px; color: white;
+        }
+        .legal-section h2 { font-size: 18px; font-weight: 700; }
+        .legal-section ul { list-style: none; }
+        .legal-section li {
+            padding: 8px 0; font-size: 15px; color: var(--text-secondary);
+            display: flex; align-items: flex-start; gap: 12px; line-height: 1.6;
+        }
+        .legal-section li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 9px; }
+        .legal-section p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+        .legal-section strong { color: var(--text); }
+        .legal-section a { color: var(--primary-light); transition: color 0.2s; }
+        .legal-section a:hover { color: var(--primary); }
+
+        .ic-primary { background: linear-gradient(135deg, var(--primary), var(--gradient-end)); }
+        .ic-green { background: linear-gradient(135deg, #34C759, #30D158); }
+        .ic-orange { background: linear-gradient(135deg, #FF9F0A, #FFB340); }
+        .ic-purple { background: linear-gradient(135deg, #A855F7, #7C3AED); }
+        .ic-red { background: linear-gradient(135deg, #FF3B30, #FF6B6B); }
+        .ic-cyan { background: linear-gradient(135deg, #5AC8FA, #4FACFE); }
+        .ic-muted { background: linear-gradient(135deg, #5C5C7A, #7A7A99); }
+
+        .dot-primary li::before { background: var(--primary); }
+        .dot-green li::before { background: var(--success); }
+        .dot-orange li::before { background: var(--warning); }
+        .dot-purple li::before { background: var(--gradient-end); }
+        .dot-red li::before { background: var(--error); }
+        .dot-cyan li::before { background: var(--cyan); }
+        .dot-muted li::before { background: var(--text-muted); }
+
+        .contact-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 12px; color: var(--primary-light); font-weight: 600;
+            text-decoration: none; font-size: 15px; transition: color 0.2s;
+        }
+        .contact-link:hover { color: var(--primary); }
+
+        footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        footer p { font-size: 12px; color: var(--text-muted); }
+        footer a { color: var(--text-muted); text-decoration: none; margin: 0 12px; transition: color 0.2s; }
+        footer a:hover { color: var(--text-secondary); }
+        @media (max-width: 600px) { .legal-section { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="logo.png" alt="MindSpace"><span>MindSpace</span></a>
+            <a href="index.html" class="nav-back">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1><span class="gradient">Privacy Policy</span></h1>
+            <p class="subtitle">Your privacy matters to us. Your data stays on your device.</p>
+            <p class="updated">Last updated: April 7, 2026</p>
+        </div>
+    </div>
+
+    <div class="legal-content">
+        <div class="container">
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-primary">📄</div><h2>1. Data We Collect</h2></div>
+                <ul class="dot-primary">
+                    <li><strong>Mood Entries:</strong> Your mood ratings, categories, and optional notes are stored locally on your device using Apple's SwiftData framework.</li>
+                    <li><strong>Journal Entries:</strong> Any journal content you write is stored only on your device.</li>
+                    <li><strong>Apple ID (Sign in with Apple):</strong> We use your Apple‑provided user identifier for authentication. We may receive your name and email only if you choose to share them during sign‑in.</li>
+                    <li><strong>Profile Photo:</strong> If you set a profile photo, it is stored locally on your device only.</li>
+                    <li><strong>App Preferences:</strong> Settings like reminder times and theme preferences are stored locally using UserDefaults.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-green">🔒</div><h2>2. How We Store Your Data</h2></div>
+                <ul class="dot-green">
+                    <li>All mood and journal data is stored <strong>locally on your device</strong> using Apple's SwiftData (encrypted at rest by iOS).</li>
+                    <li>Authentication credentials are stored in the <strong>iOS Keychain</strong>, Apple's secure credential storage system.</li>
+                    <li>Your premium subscription status is verified through Apple's App Store and cached securely in the Keychain.</li>
+                    <li><strong>We do not operate any servers.</strong> Your data never leaves your device.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-orange">🔗</div><h2>3. Third-Party Services</h2></div>
+                <ul class="dot-orange">
+                    <li><strong>RevenueCat:</strong> We use RevenueCat to manage in-app subscriptions. RevenueCat processes purchase transactions through Apple's App Store. RevenueCat's privacy policy is available at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</li>
+                    <li><strong>Apple Sign In:</strong> Authentication is handled through Apple's Sign in with Apple service, which provides privacy-preserving authentication.</li>
+                    <li>We do <strong>not</strong> use any analytics, advertising, or tracking SDKs.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-purple">👁‍🗨</div><h2>4. Analytics & Tracking</h2></div>
+                <ul class="dot-purple">
+                    <li>MindSpace does <strong>not</strong> track you.</li>
+                    <li>We do <strong>not</strong> collect analytics data.</li>
+                    <li>We do <strong>not</strong> use advertising identifiers.</li>
+                    <li>We do <strong>not</strong> share any data with advertisers.</li>
+                    <li>We do <strong>not</strong> use the App Tracking Transparency framework because we have nothing to track.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-red">👤</div><h2>5. Children's Privacy</h2></div>
+                <ul class="dot-red">
+                    <li>MindSpace is suitable for users of all ages. We do not knowingly collect personal information from children under 13.</li>
+                    <li>Since all data is stored locally and we do not operate servers, there is no risk of children's data being transmitted or stored externally.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-green">✅</div><h2>6. Your Rights</h2></div>
+                <ul class="dot-green">
+                    <li><strong>Delete your data:</strong> You can delete all your data at any time from Settings → Delete Account & Data.</li>
+                    <li><strong>Export your data:</strong> Premium users can export their mood data from Settings.</li>
+                    <li><strong>Manage subscriptions:</strong> You can manage or cancel your subscription from your Apple ID settings.</li>
+                    <li>Since we don't store your data on any server, there is nothing for us to delete on our end — you have full control.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-muted">🔄</div><h2>7. Changes to This Policy</h2></div>
+                <ul class="dot-muted">
+                    <li>We may update this privacy policy from time to time. Any changes will be reflected in the app and on this page with an updated date.</li>
+                    <li>We encourage you to review this policy periodically.</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <div class="legal-section-header"><div class="legal-icon ic-cyan">✉️</div><h2>8. Contact Us</h2></div>
+                <p>If you have any questions about this privacy policy, please contact us at:</p>
+                <a href="mailto:support@mindspace.app" class="contact-link">support@mindspace.app →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></p>
+            <p style="margin-top:12px">© 2026 MindSpace. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
