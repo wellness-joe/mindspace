@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — MindSpace</title>
+    <meta name="description" content="MindSpace Support. Get help with MindSpace mood tracker and wellness app.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #6C63FF;
+            --primary-light: #9D97FF;
+            --gradient-end: #A855F7;
+            --cyan: #5AC8FA;
+            --success: #34C759;
+            --bg: #0A0F2C;
+            --bg-card: rgba(108, 99, 255, 0.06);
+            --text: #F1F1F6;
+            --text-secondary: #9B9BB4;
+            --text-muted: #5C5C7A;
+            --border: rgba(108, 99, 255, 0.1);
+            --radius: 16px;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .bg-glow {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse 500px 300px at 20% 15%, rgba(108,99,255,0.08), transparent),
+                radial-gradient(ellipse 400px 400px at 75% 60%, rgba(168,85,247,0.05), transparent);
+        }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10,15,44,0.85); backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { max-width: 800px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+        .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-logo span { font-weight: 700; font-size: 16px; }
+        .nav-back { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        .nav-back:hover { color: var(--text); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+        .page-header { padding: 120px 0 40px; text-align: center; }
+        .page-header h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em; }
+        .page-header .gradient { background: linear-gradient(135deg, var(--primary), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 8px; }
+
+        .support-content { padding: 40px 0 80px; }
+        .support-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .support-card:hover { border-color: rgba(108,99,255,0.2); }
+        .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .card-icon {
+            width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: 15px; color: white;
+        }
+        .ic-primary { background: linear-gradient(135deg, var(--primary), var(--gradient-end)); }
+        .ic-green { background: linear-gradient(135deg, #34C759, #30D158); }
+        .ic-cyan { background: linear-gradient(135deg, #5AC8FA, #4FACFE); }
+        .ic-orange { background: linear-gradient(135deg, #FF9F0A, #FFB340); }
+
+        .support-card h2 { font-size: 18px; font-weight: 700; }
+        .support-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-top: 8px; }
+        .support-card a { color: var(--primary-light); text-decoration: none; font-weight: 600; }
+        .support-card a:hover { text-decoration: underline; }
+
+        .faq-item { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .faq-item h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+        .contact-button {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--primary); color: white; border: none;
+            padding: 14px 28px; border-radius: 12px; font-size: 16px;
+            font-weight: 600; text-decoration: none; margin-top: 16px;
+            transition: opacity 0.2s;
+        }
+        .contact-button:hover { opacity: 0.85; }
+
+        footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        footer p { font-size: 12px; color: var(--text-muted); }
+        footer a { color: var(--text-muted); text-decoration: none; margin: 0 12px; transition: color 0.2s; }
+        footer a:hover { color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 16px; }
+            .nav-inner { padding: 12px 16px; }
+            .page-header { padding: 100px 0 28px; }
+            .support-card { padding: 20px 16px; border-radius: 14px; }
+            .support-card h2 { font-size: 16px; }
+        }
+        @supports (padding: env(safe-area-inset-bottom)) {
+            footer { padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
+            nav { padding-top: env(safe-area-inset-top); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="logo.png" alt="MindSpace"><span>MindSpace</span></a>
+            <a href="index.html" class="nav-back">← Home</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1><span class="gradient">Support</span></h1>
+            <p class="subtitle">We're here to help you with MindSpace.</p>
+        </div>
+    </div>
+
+    <div class="support-content">
+        <div class="container">
+
+            <!-- Contact -->
+            <div class="support-card">
+                <div class="card-header"><div class="card-icon ic-primary">✉️</div><h2>Contact Us</h2></div>
+                <p>Have a question, issue, or feature request? Reach out to us directly and we'll get back to you as soon as possible.</p>
+                <a href="mailto:support@mindspaceapp.com" class="contact-button">
+                    ✉️ Email Support
+                </a>
+                <p style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">support@mindspaceapp.com — Response time: within 48 hours</p>
+            </div>
+
+            <!-- FAQ -->
+            <div class="support-card">
+                <div class="card-header"><div class="card-icon ic-cyan">❓</div><h2>Frequently Asked Questions</h2></div>
+
+                <div class="faq-item" style="border-top: none; padding-top: 0;">
+                    <h3>Is my data private?</h3>
+                    <p>Yes. All your mood entries, journal notes, and insights are stored 100% locally on your device. We have zero servers and never upload your data anywhere.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I cancel my subscription?</h3>
+                    <p>Open your iPhone Settings → tap your name → Subscriptions → select MindSpace → Cancel Subscription. You'll keep access until the end of your billing period.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I restore my purchase on a new device?</h3>
+                    <p>Open MindSpace → Settings → Restore Purchases. Make sure you're signed in with the same Apple ID you used for the original purchase.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I delete my account and data?</h3>
+                    <p>Open MindSpace → Settings → scroll to the bottom → tap "Delete Account & Data". This permanently removes all your data from the device.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I export my data?</h3>
+                    <p>Yes. Go to Settings → Export Data. Your mood logs and journal entries will be exported as a JSON file that you can save or share.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is MindSpace PRO?</h3>
+                    <p>MindSpace PRO unlocks AI-powered insights, advanced analytics, unlimited journaling, smart reminders, and data export. Available as Monthly ($3.99/mo), Annual ($19.99/yr with 3-day free trial), or Lifetime ($49.99 one-time).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Does MindSpace work offline?</h3>
+                    <p>Yes, MindSpace works 100% offline. No internet connection is required to log moods, journal, use breathing exercises, or view insights.</p>
+                </div>
+            </div>
+
+            <!-- Subscription Help -->
+            <div class="support-card">
+                <div class="card-header"><div class="card-icon ic-green">💳</div><h2>Subscription & Billing</h2></div>
+                <p>All subscriptions are processed through Apple's App Store. For billing issues, refunds, or payment questions:</p>
+                <p style="margin-top: 8px;"><a href="https://support.apple.com/en-us/HT204084">Manage your subscriptions on Apple Support →</a></p>
+                <p><a href="https://reportaproblem.apple.com">Request a refund from Apple →</a></p>
+            </div>
+
+            <!-- Bug Reports -->
+            <div class="support-card">
+                <div class="card-header"><div class="card-icon ic-orange">🐛</div><h2>Report a Bug</h2></div>
+                <p>Found something that doesn't work right? Please email us at <a href="mailto:support@mindspaceapp.com">support@mindspaceapp.com</a> with:</p>
+                <p style="margin-top: 8px;">• Your iPhone model and iOS version<br>• A description of the issue<br>• Steps to reproduce the problem<br>• Screenshots if possible</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="support.html">Support</a></p>
+            <p style="margin-top:12px">© 2026 MindSpace. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
